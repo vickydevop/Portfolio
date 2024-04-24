@@ -1,0 +1,71 @@
+.wrapper {
+  position: relative;
+}
+
+.header {
+  position: fixed;
+  top: 10px; /* Adjust the top distance as needed */
+  right: 10px; /* Adjust the right distance as needed */
+  // z-index: 1000; /* Ensure the menu button is on top of other content */
+}
+
+.logo {
+  float: left;
+  margin-left: 25px; /* Adjust the margin as needed */
+}
+
+.menu-btn {
+  float: right;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // width: 40px; /* Adjust the width as needed */
+  // height: 40px; /* Adjust the height as needed */
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  margin-right: 35px;
+}
+
+.menu-btn__burger {
+  width: 20px; /* Adjust the width as needed */
+  height: 3px; /* Adjust the height as needed */
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+  transition: all .5s ease-in-out;
+}
+
+/* Rest of your styles */
+
+
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 4px;
+  background: #c2c200;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before {
+  transform: translateY(-10px);
+}
+.menu-btn__burger::after {
+  transform: translateY(10px);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+/* home-page.component.scss */

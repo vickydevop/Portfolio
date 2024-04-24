@@ -1,0 +1,306 @@
+.another {
+  background-image: url("../../../../../assets/images/pap1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; // Fixed background
+  background-position: center center;
+  // height: 100vh;
+  // overflow: hidden; // Hide overflow to prevent body from scrolling
+  // position: relative;
+  // overflow-y: auto;
+}
+
+.gbsWKC {
+  background-color: rgba(252, 246, 244, 0.8);
+  height: 100%; // Adjust height to fill the parent
+}
+
+.content_1 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  padding: 10vmin;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+h1 {
+  font-family: monospace;
+}
+
+.top-content,
+.bottom-content,
+.right-content,
+.left-content {
+  width: 98%;
+  position: absolute;
+}
+
+.top-content {
+  top: 0;
+}
+
+.bottom-content {
+  bottom: 0;
+}
+.back{
+  position: fixed;
+  top: 5%;
+}
+.right-content {
+  top: 50%;
+  // right: 0;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+
+  position: fixed;
+}
+
+.left-content {
+  top: 50%;
+  // left: 0;
+  transform: translateY(-50%);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.delayed-text {
+  opacity: 0; /* Initially hide the text */
+  animation: revealAndHide 3s ease-in-out 2s forwards; /* Delay the animation by 2 seconds */
+}
+
+@keyframes revealAndHide {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(-100%); /* Move the text above the viewport */
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0); /* Move the text to its original position */
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0); /* Keep the text at its original position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move the text below the viewport */
+  }
+}
+
+.content-wrapper {
+  position: relative;
+  min-height: 95%;
+}
+.hov-eff {
+  color: #18272f;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hov-eff::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #18272f;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hov-eff:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+.container {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgb(105, 221, 125);
+}
+
+.box {
+  position: relative;
+  border: 2px dashed rgb(0, 113, 206);
+}
+
+.hovered {
+  background: black;
+  cursor: pointer;
+  color: white;
+}
+
+.right-hover:hover,
+.left-hover:hover {
+  background: black;
+  cursor: pointer;
+  color: white;
+}
+
+// .another::-webkit-scrollbar-thumb {
+//   background-color: transparent; /* Set the scrollbar thumb background to transparent */
+// }
+
+// .another::-webkit-scrollbar {
+//   width: 12px; /* Set the width of the scrollbar */
+// }
+
+// .another::-webkit-scrollbar-track {
+//   background-color: #f1f1f1; /* Color of the scrollbar track */
+//   border-radius: 6px; /* Radius of the scrollbar track */
+// }
+
+// .another::after {
+//   content: ""; /* Create a pseudo-element for the chain image */
+//   background-image: url('../../../../../assets/images/projects/chain.jpg'); /* Path to the chain image */
+//   background-size: cover; /* Scale the image to cover */
+//   width: 12px; /* Width of the chain image, same as the scrollbar width */
+//   height: 100%; /* Height of the chain image, same as the scrollbar track height */
+//   position: absolute; /* Position absolutely */
+//   top: 0; /* Align to the top */
+//   right: 0; /* Align to the right */
+//   animation: scrollAnimation 2s infinite linear; /* Apply the scrolling animation */
+// }
+
+// @keyframes scrollAnimation {
+//   from {
+//     background-position-y: 0%; /* Start position of the chain image */
+//   }
+//   to {
+//     background-position-y: 100%; /* End position of the chain image */
+//   }
+// }
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Makes the container take up the full height of the viewport */
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 60px;
+  aspect-ratio: 4;
+  background: radial-gradient(
+      closest-side at calc(100% / 6) 50%,
+      #000 90%,
+      #0000
+    )
+    0/75% 100%;
+  position: relative;
+  animation: l15-0 1s infinite linear;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  clip-path: inset(0 0 0 50%);
+  inset: 0;
+  animation: l15-1 0.5s infinite linear;
+}
+@keyframes l15-0 {
+  0%,
+  49.99% {
+    transform: scale(1);
+  }
+  50%,
+  100% {
+    transform: scale(-1);
+  }
+}
+@keyframes l15-1 {
+  0% {
+    transform: translateX(-37.5%) rotate(0turn);
+  }
+  80%,
+  100% {
+    transform: translateX(-37.5%) rotate(1turn);
+  }
+}
+
+.grow svg {
+  transition: 0s ease;
+  cursor: pointer;
+}
+
+.grow svg:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: 0s ease;
+}
+.center-left {
+  position: fixed;
+  top: 8%;
+  transform: translate(-50%, -50%);
+}
+.fCLPmg {
+  width: 2px;
+  height: 8rem;
+  background-color: rgb(0, 0, 0);
+}
+.vertical-line {
+  border-left: 2px solid black; /* Change the color and thickness as needed */
+  height: 200px; /* Change the height as needed */
+}
+
+#flip-container {
+  perspective: 1000px;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+#flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+
+.desc-text {
+  font-size: calc(0.7em + 0.3vw);
+  font-family: Karla, sans-serif;
+  font-weight: 500;
+}

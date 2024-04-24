@@ -1,0 +1,46 @@
+<!-- home-page.component.html -->
+
+<div class="wrapper">
+
+  <!-- Header Div -->
+  <div class="header w-full flex items-center justify-between">
+    <!-- Logo on the left -->
+    <div class="logo">
+      <p class="text-white">V C .</p>
+    </div>
+
+    <!-- Menu on the right -->
+    <div class="menu-btn" (click)="toggleMenu()" [class.open]="menuOpen">
+      <div class="menu-btn__burger"></div>
+    </div>
+  </div>
+
+  <!-- Home with content on the left & video on the right (Black color) -->
+  <div class="w-full flex items-center justify-center h-[100vh] bg-black">
+    <p class="text-white">Hi VICKY</p>
+  </div>
+
+  <!-- About me (Yellow Color) -->
+  <div class="w-full flex items-center text-justify justify-center h-[50vh] bg-yellow-400">
+    <p class=" p-10 text-black text-2xl font-bold font-sans">
+      Hey, there! I’m a Full Stack Developer & Trainer based in Hosur, TamilNadu.
+       I focus on Responsive Web design and Animation.
+    </p>
+  </div>
+
+  <!-- What can I do (White color) -->
+  <div class="w-full flex items-center justify-center h-[100vh] bg-white">
+    <p class="text-black">Friend's Just See what can I do.</p>
+  </div>
+
+  <!-- Contact (Black color) -->
+  <div class="w-full flex items-center justify-center h-[100vh] bg-black">
+    <p class="text-white">Contact Me.</p>
+  </div>
+
+  <!-- Dropdown component -->
+  <div class="dropdown" *ngIf="menuOpen">
+    <app-header-page></app-header-page>
+  </div>
+
+</div>

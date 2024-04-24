@@ -1,0 +1,540 @@
+.another {
+  background: linear-gradient(-45deg, #d76868, #e1ec47);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  // height: 105vh;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.letter-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.animated-mail {
+  position: absolute;
+  height: 150px;
+  width: 200px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
+
+  .body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    border-color: transparent transparent #e95f55 transparent;
+    z-index: 2;
+  }
+
+  .top-fold {
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 100px 0 100px;
+    -webkit-transform-origin: 50% 0%;
+    -webkit-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    -moz-transform-origin: 50% 0%;
+    -moz-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    transform-origin: 50% 0%;
+    transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    border-color: #cf4a43 transparent transparent transparent;
+    z-index: 2;
+  }
+
+  .back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #cf4a43;
+    z-index: 0;
+  }
+
+  .left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 100px;
+    border-color: transparent transparent transparent #e15349;
+    z-index: 2;
+  }
+
+  .letter {
+    left: 20px;
+    bottom: 0px;
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transition: 0.4s 0.2s;
+    -moz-transition: 0.4s 0.2s;
+    transition: 0.4s 0.2s;
+
+    .letter-border {
+      height: 10px;
+      width: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        #cb5a5e,
+        #cb5a5e 8px,
+        transparent 8px,
+        transparent 18px
+      );
+    }
+
+    .letter-title {
+      margin-top: 10px;
+      margin-left: 5px;
+      height: 10px;
+      width: 40%;
+      background: #cb5a5e;
+    }
+    .letter-context {
+      margin-top: 10px;
+      margin-left: 5px;
+      height: 10px;
+      width: 20%;
+      background: #cb5a5e;
+    }
+
+    .letter-stamp {
+      margin-top: 30px;
+      margin-left: 120px;
+      border-radius: 100%;
+      height: 30px;
+      width: 30px;
+      background: #cb5a5e;
+      opacity: 0.3;
+    }
+  }
+}
+
+.shadow {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  width: 400px;
+  height: 30px;
+  transition: 0.4s;
+  transform: translateX(-50%);
+  -webkit-transition: 0.4s;
+  -webkit-transform: translateX(-50%);
+  -moz-transition: 0.4s;
+  -moz-transform: translateX(-50%);
+
+  border-radius: 100%;
+  background: radial-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.letter-image:hover {
+  .animated-mail {
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+  }
+
+  .animated-mail .top-fold {
+    transition: transform 0.4s, z-index 0.2s;
+    transform: rotateX(180deg);
+    -webkit-transition: transform 0.4s, z-index 0.2s;
+    -webkit-transform: rotateX(180deg);
+    -moz-transition: transform 0.4s, z-index 0.2s;
+    -moz-transform: rotateX(180deg);
+    z-index: 0;
+  }
+
+  .animated-mail .letter {
+    height: 180px;
+  }
+
+  .shadow {
+    width: 250px;
+  }
+}
+
+.content_1 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  padding: 10vmin;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+h1 {
+  font-family: monospace;
+}
+
+.top-content,
+.bottom-content,
+.right-content,
+.left-content {
+  width: 98%;
+  position: absolute;
+}
+
+.top-content {
+  top: 0;
+}
+
+.bottom-content {
+  bottom: 0;
+}
+
+.right-content {
+  top: 50%;
+  // right: 0;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+}
+
+.left-content {
+  top: 50%;
+  // left: 0;
+  transform: translateY(-50%);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.delayed-text {
+  opacity: 0; /* Initially hide the text */
+  animation: revealAndHide 3s ease-in-out 2s forwards; /* Delay the animation by 2 seconds */
+}
+
+@keyframes revealAndHide {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(-100%); /* Move the text above the viewport */
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0); /* Move the text to its original position */
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0); /* Keep the text at its original position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move the text below the viewport */
+  }
+}
+
+.content-wrapper {
+  position: relative;
+  min-height: 95%;
+}
+.hov-eff {
+  color: #18272f;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hov-eff::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #18272f;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hov-eff:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+.another {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #77a3da 0%, #0c0d13 100%);
+  overflow: hidden;
+}
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  transform: rotate(-45deg);
+}
+
+.star {
+  $star-count: 50;
+  --star-color: #fff;
+  --star-tail-length: 6em;
+  --star-tail-height: 2px;
+  --star-width: calc(var(--star-tail-length) / 6);
+  --fall-duration: 9s;
+  --tail-fade-duration: var(--fall-duration);
+
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--star-tail-length);
+  height: var(--star-tail-height);
+  color: var(--star-color);
+  background: linear-gradient(45deg, currentColor, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(104em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
+    tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+
+  @include sp-layout {
+    // For mobile performance, tail-fade animation will be removed QAQ
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
+
+  @for $i from 1 through $star-count {
+    &:nth-child(#{$i}) {
+      --star-tail-length: #{random_range(500em, 750em) / 100};
+      --top-offset: #{random_range(0vh, 10000vh) / 100};
+      --fall-duration: #{random_range(6000, 12000s) / 1000};
+      --fall-delay: #{random_range(0, 10000s) / 1000};
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: calc(var(--star-width) / -2);
+    width: var(--star-width);
+    height: 100%;
+    background: linear-gradient(45deg, transparent, currentColor, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+
+@keyframes tail-fade {
+  0%,
+  50% {
+    width: var(--star-tail-length);
+    opacity: 1;
+  }
+
+  70%,
+  80% {
+    width: 0;
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+.word {
+  font-family: "Anton", sans-serif;
+  perspective: 1000px;
+  color: wheat;
+}
+
+.word span {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 45px;
+  user-select: none;
+  line-height: 0.8;
+}
+
+.word span:nth-child(1).active {
+  animation: balance 1.5s ease-out;
+  transform-origin: bottom left;
+}
+
+.grow svg {
+  transition: 0s ease;
+  cursor: pointer;
+  margin-right: 22px;
+}
+
+.grow svg:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: 0s ease;
+}
+
+.center-left {
+  position: absolute;
+  top: 5%;
+  transform: translate(-50%, -50%);
+}
+
+.spantext {
+  // border: 2px solid rgb(252, 246, 244);
+  color: rgb(252, 246, 244);
+  // padding: 2rem;
+  // width: 50vw;
+  // height: 60vh;
+  // z-index: 3;
+  line-height: 0.5;
+  // display: flex;
+  // -webkit-box-pack: center;
+  // justify-content: center;
+  // -webkit-box-align: center;
+  // align-items: center;
+  font-size: calc(0.5rem + 1vw);
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0);
+  // position: absolute;
+  // left: calc(5rem + 5vw);
+  // top: 10rem;
+  font-family: "Ubuntu Mono", monospace;
+  font-style: italic;
+}
+.cqnaHn {
+  width: 2px;
+  height: 8rem;
+  background-color: rgb(252, 246, 244);
+}
+
+
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Makes the container take up the full height of the viewport */
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 60px;
+  aspect-ratio: 4;
+  background: radial-gradient(closest-side at calc(100%/6) 50%,#000 90%,#0000) 0/75% 100%;
+  position: relative;
+  animation: l15-0 1s infinite linear;
+}
+.loader::before {
+  content:"";
+  position: absolute;
+  background: inherit;
+  clip-path: inset(0 0 0 50%);
+  inset: 0;
+  animation: l15-1 0.5s infinite linear;
+}
+@keyframes l15-0 {
+    0%,49.99% {transform: scale(1)}
+    50%,100%  {transform: scale(-1)}
+}
+@keyframes l15-1 {
+    0%       {transform: translateX(-37.5%) rotate(0turn)}
+    80%,100% {transform: translateX(-37.5%) rotate(1turn)}
+}
+.fCLPmg {
+  width: 2px;
+  height: 8rem;
+  background-color: rgb(255, 255, 255);
+}
